@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>ubnt portal</title>
+
+    <!-- Bootstrap -->
+    <link href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../bower_components/onepage-scroll/onepage-scroll.css"/>
+    <link href="../../styles/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="../../bower_components/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="../../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="main">
+
+        <section class="page1">
+            <div class="page_container">
+                <img src="../../imgs/background.png" class="center-block img-responsive background">
+
+                <div class="online-btn">
+                    <div class="form-bg"></div>
+                    <div class="checkbox">
+                        <span class="icon-connection"></span>&nbsp;&nbsp;开始免费上网
+                    </div>
+                </div>
+                <img class="logo" src="../../imgs/logo.png" class="center-block img-responsive">
+            </div>
+        </section>
+
+        <section class="page2">
+            <div class="page_container">
+                <div class="page2-wrapper">
+                    <header>
+                        <h4>漫咖啡</h4>
+                    </header>
+
+                    <div class="carousel-ads-container">
+                        <div id="carousel-ads" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-ads" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-ads" data-slide-to="1"></li>
+                                <li data-target="#carousel-ads" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img class="center-block img-responsive" src="../../imgs/pic_001.jpg" alt="">
+                                    <div class="carousel-caption">
+                                        <p>最近活动 全场85折最近活动 全场85折最近活动 全场85折</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="center-block img-responsive" src="../../imgs/pic_002.jpg" alt="">
+                                    <div class="carousel-caption">
+                                        <p>最近活动 全场86折</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="center-block img-responsive" src="../../imgs/pic_003.jpg" alt="">
+                                    <div class="carousel-caption">
+                                        <p>最近活动 全场87折</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <form class="validate-form">
+                                    <div class="row form-group">
+                                        <div class="col-xs-8">
+                                            <div class="phone-num-container">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span class="icon-mobile"></span></div>
+                                                    <input type="tel" class="phone-num" placeholder="手机号码">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-send-validate-code-container">
+                                            <div class="send-validate-code-container">
+                                                <button type="button" class="btn send-validate-code">发送验证码</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="validate-code-container">
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><span class="icon-key"></span></div>
+                                                <input type="text" class="validate-code" placeholder="验证码">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group submit-btn">
+                                        <div class="submit-btn-container">
+                                            <button type="submit" class="btn">免费上网</button>
+                                        </div>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" checked><a href="">我接受《上网管理条例》</a>
+                                        </label>
+                                    </div>
+                                </form>
+                                <ul class="information">
+                                    <li><span class="icon-home"></span>上海市上海市上海市上海市</li>
+                                    <li><span class="icon-phone"></span>021-12345678</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <h4>技术支持<small>优倍快网络技术咨询(上海)有限公司</small></h4>
+                    </footer>
+                </div>
+            </div>
+        </section>
+
+
+</div>
+
+<script src="../../bower_components/jquery/jquery.min.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../bower_components/onepage-scroll/jquery.onepage-scroll.min.js"></script>
+<script src="../../scripts/plugins.js"></script>
+<script src="../../scripts/hammer.js"></script>
+<script src="../../scripts/focusTouch.js"></script>
+
+<script>
+    $('.page2-wrapper').height($('.page2-wrapper').height());
+    $(".main").onepage_scroll({
+        pagination: false,
+        loop: false,
+        afterMove: function(index) {
+            if (index === 1) {
+                $('.page2').scrollTop(0);
+            }
+        }
+    });
+    function init() {
+        $('.logo').center();
+    }
+
+    $('.logo').load(function () {
+        $(this).center();
+    });
+
+    $('.online-btn').click(function() {
+        $(".main").moveDown();
+    });
+
+    $(window).resize(function () {
+        $('.logo').center();
+    });
+</script>
+
+</body>
+</html>
